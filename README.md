@@ -1,0 +1,2 @@
+# HackHour
+Daily algorithm practice
