@@ -1,0 +1,23 @@
+{
+  "name": "hackhour",
+  "version": "1.0.0",
+  "description": "HackHour is a collection of daily algorithms to practice.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annelise08/HackHour.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annelise08/HackHour/issues"
+  },
+  "homepage": "https://github.com/annelise08/HackHour#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
