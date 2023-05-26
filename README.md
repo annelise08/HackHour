@@ -1,2 +1,2 @@
 # HackHour
-Daily algorithm practice
+HackHour is a collection of daily algorithms to practice. 
