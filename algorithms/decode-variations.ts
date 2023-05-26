@@ -10,6 +10,18 @@ input:  S = '1262'
 output: 3
 explanation: There are 3 messages that encode to '1262': 'AZB', 'ABFB', and 'LFB'. */
 
-function decodeVariations (S: string) {
-    
+function decodeVariations (S: string): number {
+    // initialize variations to 1
+    let variations: number = 1;
+    // iterate through elements
+    for (let i = 0; i < S.length - 1; i++){
+        // if element is 1 and next element exists, add 1 to variations
+        if (S[i] === '1') variations++;
+        // if element is 2 and next element is less than 7, add 1 to variations
+        if (S[i] === '2' && Number(S[i + 1]) < 7) variations++;
+    }
+    // return variations
+    return variations;
 }
+
+console.log(decodeVariations('1262')) // 3
