@@ -34,3 +34,26 @@ function findGrantsCap(grantsArray, newBudget) {
       else return max;
     }
 }
+
+function findGrantsCapPramp(grantsArray, newBudget){
+  let n = grantsArray.length;
+
+  // sort array in descending order
+  grantsArray.sort((a, b) => b - a);
+
+  // pad grants array with a 0
+  grantsArray.push(0);
+
+  // calculate amount that we need to cut back by to meet budget (sum of all grantsArray - newBudget)
+  let surplus = grantsArray.reduce((curr, acc) => curr + acc) - newBudget;
+
+  // if there's nothing to cut, return the highest grant
+  if (surplus <= 0) return grantsArray[0];
+
+  for (let i = 0; i < n - 1; i++){
+    surplus -= (i + 1) * (grantsArray[i] - grantsArray[i + 1]);
+    if (surplus <= 0) return grantsArray[i + 1] + (-surplus/(i + 1));
+  }
+}
+
+console.log(findGrantsCapPramp([2, 100, 50, 120, 1000], 190))
