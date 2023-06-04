@@ -37,26 +37,41 @@ nums2.length == n
 -109 <= nums1[i], nums2[j] <= 109
 */
 
-function mergeSorted(arr1, m, arr2, n) {
-    // current index is 0
-    let index = 0;
-    // iterate through arr2
-    for (let i = 0; i < arr2.length; i++){
-        // while element has not been inserted
-        let inserted = false;
-        while(!inserted){
-            // start at arr1 at index (index)
-            // if element is greater than arr2 element, insert arr2 element before
-            // remove last element
-            if (arr1[index] > arr2[i]){
-                arr1.splice(index, 0, arr2[i]);
-                arr1.pop();
-                inserted = true;
-            }
-            index++;
+function mergeSorted(arr1: number[], m: number, arr2: number[], n: number):void {
+    // initialize pointers
+    // i is last non-zero number in arr1
+    let i: number = m - 1;
+    // j is last non-zero number in arr2
+    let j: number = n - 1;
+    // k is last position in arr1
+    let k: number = m + n - 1;
+
+    while(i >= 0 && j >=0){
+        // if el at i is less than el at j, el at k becomes el at j
+        if (arr1[i] < arr2[j]){
+            arr1[k] = arr2[j];
+            k--;
+            j--;
+        } else {
+            arr1[k] = arr1[i];
+            i--;
+            k--;
         }
     }
-    return arr1
+
+    // process remaining i elements
+    while (i >= 0){
+        arr1[k] = arr1[i];
+        k--;
+        i--;
+    }
+
+    while (j >= 0){
+        arr1[k] = arr2[j];
+        k--;
+        j--;
+    }
 }
-const arr1 = [1,2,3,0,0,0]
-console.log(mergeSorted([1,2,3,0,0,0], 3, [2,5,6], 3));
+const arr1 = [1,2,3,0,0,0];
+mergeSorted(arr1, 3, [2,5,6], 3);
+console.log(arr1)
