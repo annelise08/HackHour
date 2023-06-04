@@ -66,12 +66,13 @@ function mergeSorted(arr1: number[], m: number, arr2: number[], n: number):void 
         i--;
     }
 
+    // process remaining j elements
     while (j >= 0){
         arr1[k] = arr2[j];
         k--;
         j--;
     }
 }
-const arr1 = [1,2,3,0,0,0];
+// const arr1 = [1,2,3,0,0,0];
 mergeSorted(arr1, 3, [2,5,6], 3);
 console.log(arr1)
