@@ -73,6 +73,6 @@ function mergeSorted(arr1: number[], m: number, arr2: number[], n: number):void 
         j--;
     }
 }
-// const arr1 = [1,2,3,0,0,0];
-mergeSorted(arr1, 3, [2,5,6], 3);
-console.log(arr1)
+const arr = [1,2,3,0,0,0];
+mergeSorted(arr, 3, [2,5,6], 3);
+console.log(arr)
