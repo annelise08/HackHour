@@ -30,3 +30,26 @@ console.log(palindrome("A man, a plan, a canal: Panama"))
 console.log(palindrome("A, a plan, a canal: Panama"))
 console.log(palindrome("race a car"))
 console.log(palindrome(" "))
+
+// using two pointers
+function isPalindrome(s: string){
+    // convert to lowercase
+    s = s.toLowerCase();
+    // remove non-alphanumeric characters
+    s = s.replace(/[^a-z0-9]/g, "");
+    // initialize pointers
+    let start: number = 0;
+    let end: number = s.length - 1;
+    // iterate through string, checking if chars match
+    while (start < end){
+        if (s[start] !== s[end]) return false;
+        start++;
+        end--;
+    }
+    return true;
+}
+
+console.log(isPalindrome("A man, a plan, a canal: Panama"))
+console.log(isPalindrome("A, a plan, a canal: Panama"))
+console.log(isPalindrome("race a car"))
+console.log(isPalindrome(" "))
