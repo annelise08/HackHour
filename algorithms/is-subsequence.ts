@@ -27,7 +27,7 @@ function isSubsequence(s: string, t: string): boolean {
     // if empty string, return true
     if (s === "") return true;
     // while t pointer is less than length of t
-    while (j < t.length){
+    while (j < t.length && i < s.length){
         // if elements at s and t match
         if (s[i] === t[j]){
             // if s is at last element, return true
@@ -45,3 +45,5 @@ function isSubsequence(s: string, t: string): boolean {
 
 console.log(isSubsequence("abc", "ahbgdc"))
 console.log(isSubsequence("axc", "ahbgdc"))
+
+// using recursion
