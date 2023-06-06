@@ -20,6 +20,8 @@ Output: false
 // i: two strings, s and t
 // o: boolean
 
+// time complexity: O(N)
+// space complexity: O(1)
 function isSubsequence(s: string, t: string): boolean {
     // initialize pointers
     let i: number = 0;
@@ -47,3 +49,21 @@ console.log(isSubsequence("abc", "ahbgdc"))
 console.log(isSubsequence("axc", "ahbgdc"))
 
 // using recursion
+function subsequence(s: string, t: string) {
+    // base case: s is empty, return true
+    if (s.length === 0) return true;
+    // if t is empty, return false
+    if (t.length === 0) return false;
+    // recursive case
+    // if first letter of s matches first letter of t
+    if (s[0] === t[0]){
+        // remove first letter of s and t, return call of function
+        return subsequence(s.substring(1), t.substring(1));
+    }
+    // otherwise, remove first letter of t and return call of func
+    else return subsequence(s, t.substring(1))
+}
+
+console.log(subsequence("abc", "ahbgdc"))
+console.log(subsequence("axc", "ahbgdc"))
+console.log(subsequence("", "ahbgdc"))
