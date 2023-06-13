@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/annelise08/HackHour/issues"
   },
-  "homepage": "https://github.com/annelise08/HackHour#readme",
-  "devDependencies": {
-    "typescript": "^5.0.4"
-  }
+  "homepage": "https://github.com/annelise08/HackHour#readme"
 }

@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES2015",
+      "noImplicitAny": true,
+      "lib": ["ES6"],    
+      "strict": true,
+      "moduleDetection": "force"
+    },
+    "include": ["algorithms", "data-structures"],
+    "exclude": ["node_modules"]
+  }
