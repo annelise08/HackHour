@@ -17,6 +17,8 @@ Output: 2
 
 */
 
+// Time complexity: O(N)
+// Space complexity: O(N)
 function majorityElement(nums: number[]): number {
     // create an object to store values and counts
     const counts: any = {};
