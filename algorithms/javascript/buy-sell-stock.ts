@@ -24,19 +24,19 @@ Explanation: In this case, no transactions are done and the max profit = 0. */
 // i: array of numbers 
 // o: number (max profit)
 function maxProfit(prices: number[]): number {
+    // initialize minimum buy price
+    let minBuy = prices[0];
     // initialize max profit
-    let profit = 0
-    // if there's only one element, return 0
-    if (prices.length < 2) return 0;
-    // iterate through array (buy)
-    for (let i = 0; i < prices.length - 1; i++) {
-        // iterate through array again (sell)
-        for (let j = i + 1; j < prices.length; j++){
-            // if sell - buy is greater than max profit, update max profit
-            if (prices[j] - prices[i] > profit) profit = prices[j] - prices[i]
-        }
+    let max = 0;
+    // iterate through prices
+    for (let i = 1; i < prices.length; i++){
+        // if current profit is greater than max profit, update max profit
+        max = Math.max(max, prices[i] - minBuy);
+        // if current price is less than min buy price, update min buy price
+        if (prices[i] < minBuy) minBuy = prices[i];
     }
     // return max profit
-    return profit
+    return max;
+
 };
 
